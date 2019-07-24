@@ -1,0 +1,35 @@
+.css-create-docs {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.css-create-docs .for-container.for-fullscreen {
+    top: 50px;
+}
+
+.css-create-label-con {
+    margin-bottom: 20px;
+    /*display: flex;*/
+}
+
+.css-create-label {
+    text-align: right;
+    width: 80px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.css-create-input {
+    display: inline-block;
+    width: calc(50% - 80px);
+    line-height: 30px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding-left: 5px;
+}
+
+.css-create-detailCon {
+    margin-bottom: 10px;
+}

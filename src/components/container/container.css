@@ -1,0 +1,112 @@
+.css-docs {
+    flex: 1 0 auto;
+    margin-top: 60px;
+    -webkit-flex: 1 0 auto;
+}
+
+@media (min-width: 780px) and (max-width: 1279px) {
+    .css-docs {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 779px) {
+    .css-docs {
+        margin-top: 40px;
+    }
+}
+
+.css-docs-second {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    justify-content: stretch;
+    align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -webkit-flex-grow: 1;
+    -webkit-flex-shrink: 0;
+    -webkit-flex-basis: auto;
+    -webkit-box-pack: stretch;
+    -webkit-justify-content: stretch;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+}
+
+.css-wrap {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+}
+
+.css-wrap-second {
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    flex: 1 0 auto;
+}
+
+.css-subWrap {
+    flex: 1 0 auto;
+}
+
+.css-subWrap-h {
+    display: flex;
+    min-height: calc(100vh - 60px);
+}
+
+.css-article {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+}
+
+@media (max-width: 979px) and (min-width: 600px) {
+    .css-side {
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 1339px) and (min-width: 600px) {
+    .css-side {
+        margin-left: 80px;
+        flex: 0 0 200px;
+    }
+}
+
+@media (min-width: 600px) {
+    .css-side {
+        margin-left: 80px;
+        border-left: 1px solid rgb(236, 236, 236);
+    }
+}
+
+.css-side {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}

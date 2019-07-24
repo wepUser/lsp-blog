@@ -1,0 +1,55 @@
+.css-article-con {
+    margin-top: 50px;
+    flex: 2;
+}
+
+.css-article {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.css-article .for-panel.for-editor-preview {
+    font-size: 16px;
+}
+
+.css-article .for-panel.for-editor-preview .for-preview.for-markdown-preview {
+    background: #fff;
+}
+
+@media (max-width: 979px) and (min-width: 600px) {
+    .css-side {
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 1339px) and (min-width: 600px) {
+    .css-side {
+        margin-left: 80px;
+        flex: 0 0 200px;
+    }
+}
+
+@media (min-width: 600px) {
+    .css-side {
+        margin-left: 80px;
+        border-left: 1px solid rgb(236, 236, 236);
+    }
+}
+
+.css-side {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}

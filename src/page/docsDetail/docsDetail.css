@@ -1,0 +1,27 @@
+.css-article-con {
+    margin-top: 50px;
+}
+
+.css-article {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.css-article .for-panel.for-editor-preview {
+    font-size: 16px;
+}
+
+.css-article .for-panel.for-editor-preview .for-preview.for-markdown-preview {
+    background: #fff;
+}
