@@ -3,7 +3,7 @@ import _ from 'lodash';
 import './createDocs.css';
 import {Container} from '../../components/container/Container';
 import Editor from 'for-editor';
-import {saveDocs} from '../../api/api';
+import {saveDocs, updateDocs} from '../../api/api';
 
 const toolbar = {
     h1: true, // h1
@@ -22,13 +22,31 @@ const toolbar = {
     /* v0.2.3 */
     subfield: false, // 单双栏模式
 };
+//编辑数据的数据类型声明
+interface stateDataProps {
+    docs: string,
+    title: string,
+    keywords: string,
+    id: string
+}
 
-export const CreateDocs = function () {
-    const [editValue, setEditState] = useState('');
-    const [titleValue, setTitleState] = useState('');
-    const [keywordsValue, setKeyWordsState] = useState('');
+let stateData: stateDataProps = {
+    docs: '',
+    title: '',
+    keywords: '',
+    id: ''
+};
 
-    // //editValue-change事件监听
+export const CreateDocs = function (props: any) {
+    //编辑数据的数据来源
+    if (props.location.state) {
+        stateData = props.location.state.data;
+    }
+    const [editValue, setEditState] = useState(stateData.docs || '');
+    const [titleValue, setTitleState] = useState(stateData.title || '');
+    const [keywordsValue, setKeyWordsState] = useState(stateData.keywords || '');
+
+    //editValue-change事件监听
     function editChange(v: string) {
         setEditState(v);
     }
@@ -45,13 +63,24 @@ export const CreateDocs = function () {
 
     //save事件监听
     function handleSave() {
-        if (editValue && titleValue && keywordsValue) {
-            saveDocs({docs: editValue, title: titleValue, keywords: keywordsValue}).then(info => {
-                console.log(info);
-            });
+        if (stateData.id) {
+            updateDocs({docs: editValue, title: titleValue, keywords: keywordsValue, id: stateData.id}).then(res => {
+                if (res.success) {
+                    alert('修改成功');
+                }
+            })
         } else {
-            alert('有字段为空');
+            if (editValue && titleValue && keywordsValue) {
+                saveDocs({docs: editValue, title: titleValue, keywords: keywordsValue}).then(res => {
+                    if (res.success) {
+                        alert('创建成功');
+                    }
+                });
+            } else {
+                alert('有字段为空');
+            }
         }
+
     }
 
     return (
@@ -70,7 +99,8 @@ export const CreateDocs = function () {
                            value={keywordsValue}/>
                 </div>
                 <h4 className="css-create-detailCon">正文</h4>
-                <Editor value={editValue} height={800} onChange={_.throttle(editChange, 500)} onSave={handleSave} toolbar={toolbar}/>
+                <Editor value={editValue} height={800} onChange={_.throttle(editChange, 500)} onSave={handleSave}
+                        toolbar={toolbar}/>
             </div>
         </Container>
     );

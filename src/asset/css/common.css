@@ -26,19 +26,10 @@ body {
 
 /*===============*/
 .css-sub-common {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 60px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
 }
 
 @media (min-width: 600px) and (max-width: 1279px) {
@@ -55,17 +46,11 @@ body {
 
 /*===========*/
 .css-logo-wrap {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
     margin-right: 10px;
     height: 100%;
     align-items: center;
     color: #61dafb;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
 }
 
 .css-logo-wrap:focus {
@@ -118,10 +103,6 @@ body {
 /*============*/
 .css-nav {
     flex: 1;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -164,10 +145,6 @@ body {
 
 /*==========*/
 .css-title {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -219,10 +196,6 @@ body {
 
 /*============*/
 .css-form {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
     flex: 0 0 auto;
     flex-direction: row;
@@ -296,25 +269,6 @@ body {
     }
 }
 
-/*===============*/
-.css-home {
-    flex: 1 0 auto;
-    margin-top: 60px;
-    -webkit-flex: 1 0 auto;
-}
-
-@media (min-width: 780px) and (max-width: 1279px) {
-    .css-home {
-        margin-top: 50px;
-    }
-}
-
-@media (max-width: 779px) {
-    .css-home {
-        margin-top: 40px;
-    }
-}
-
 /*=============*/
 .css-section-wrap {
     line-height: 25px;
@@ -355,10 +309,6 @@ body {
 }
 
 .css-section-wrap-common {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     flex: 0 1 33%;

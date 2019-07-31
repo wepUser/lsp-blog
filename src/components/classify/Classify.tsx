@@ -1,20 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
-import {changeDocsClass} from '../../reducer/action';
+import {changeDocsClass, changeClassType} from '../../reducer/action';
 import './classfy.css';
 
 interface ClassifyProps {
     docsClass: string,
-    onChangeClass: (id: string) => void
+    onChangeClass: (id: string) => void,
+    changeClassType: (id: string) => void
 }
 
 //文章分类
-const Classify: React.FC<ClassifyProps> = function ({docsClass, onChangeClass}) {
+const Classify: React.FC<ClassifyProps> = function ({docsClass, onChangeClass,changeClassType}) {
     const classifyValues = ['all', 'js', 'css', 'html', 'react', 'echarts', 'd3', 'three'];
     const [currentClass, setClassState] = useState(docsClass);
     const classActive = function (key: string): void {
         setClassState(key);
         onChangeClass(key);
+        changeClassType('docs');
     };
     return (
         <ul className="css-list">
@@ -38,6 +40,9 @@ const mapDispatchToProps = (dispatch: any) => {
     return {
         onChangeClass: (id: string) => {
             dispatch(changeDocsClass(id))
+        },
+        changeClassType: (id: string) => {
+            dispatch(changeClassType(id))
         }
     }
 };

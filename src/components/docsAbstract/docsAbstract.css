@@ -3,7 +3,11 @@
 }
 
 .css-docs-list-info {
-    height: 84px;
+    line-height: 2;
+}
+
+.css-docs-list-check-button {
+
 }
 
 .css-check-allDocs {

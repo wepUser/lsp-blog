@@ -5,6 +5,16 @@
     flex-direction: column;
 }
 
+.css-create-docs .for-container {
+    border-radius: 4px;
+    box-shadow: none;
+}
+
+.css-create-docs .for-container .for-editor-content textarea {
+    height: 105%;
+    padding: 8px;
+}
+
 .css-create-docs .for-container.for-fullscreen {
     top: 50px;
 }

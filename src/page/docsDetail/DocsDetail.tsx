@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from "react-router-dom";
+import {getDocsDetail} from '../../api/api';
+import Editor from 'for-editor';
+
 import {Title} from '../../components/title/Title';
 import {Container} from '../../components/container/Container';
-import Editor from 'for-editor';
-import {getDocsDetail} from '../../api/api';
+import {Comment} from '../../components/comment/Comment';
 
 import './docsDetail.css';
 
@@ -27,7 +30,7 @@ const toolbar = {
 export const DocsDetail = function (props: any) {
     const [docs, setDocsData] = useState([]);
     let paramsStr = props.history.location.search;
-    let id = paramsStr.substr(paramsStr.indexOf('=') + 1);
+    let id: string = paramsStr.substr(paramsStr.indexOf('=') + 1);
 
     let docss: Array<any> = [];
     //获取文章详情数据
@@ -39,8 +42,11 @@ export const DocsDetail = function (props: any) {
             if (!ignore && data.length) {
                 docss.push(
                     [<Title key="title" titleCon={data[0]}/>,
-                        <Editor key='docsEdit' value={data[0]['docs']} preview={true} toolbar={toolbar}
-                                style={{border: 'none', boxShadow: 'none', background: '#fff'}}/>
+                        <div key="edit" className="css-docs-detail-con">
+                            <Link className="css-docs-detail-edit-button"
+                                  to={{pathname: "/createDocs", state: {data: data[0]}}}>edit</Link>
+                            <Editor value={data[0]['docs']} preview={true} toolbar={toolbar}/>
+                        </div>
                     ]
                 );
                 setDocsData(docss);
@@ -53,13 +59,18 @@ export const DocsDetail = function (props: any) {
         };
     }, []);
 
-    return (
-        <Container>
-            <div className="css-article-con">
-                <article className="css-article">
+    if (docs.length) {
+        return (
+            <Container>
+                <div className="css-article-con">
                     {docs}
-                </article>
-            </div>
-        </Container>
-    )
+                    <Comment id={id}/>
+                </div>
+            </Container>
+        )
+    } else {
+        return null;
+    }
+
+
 };

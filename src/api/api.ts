@@ -7,15 +7,15 @@ const api = axios.create({
     // headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 });
 
-export interface AxiosResponse<T = any> {
-    data: T;
-    success: boolean;
-    status: number;
-    statusText: string;
-    headers: any;
-    config: AxiosRequestConfig;
-    request?: any;
-}
+// export interface AxiosResponse {
+//     data: any;
+//     success: boolean;
+//     status: number;
+//     statusText?: string;
+//     headers?: any;
+//     config?: AxiosRequestConfig;
+//     request?: any;
+// }
 
 const baseGet = (url: string) => {
     return api.get(url).then(res => {
@@ -61,4 +61,40 @@ export const saveDocs = (data: any) => {
  */
 export const getDocsDetail = (data: any) => {
     return basePost('getDocsDetail', data);
+};
+
+/**
+ * 搜索文章
+ * @param data
+ * @returns {Promise<Object|TResult2|TResult1>}
+ */
+export const searchDocs = (data: any) => {
+    return basePost('searchDocs', data);
+};
+
+/**
+ * 更新指定文章数据
+ * @param data
+ * @returns {Promise<Object|TResult2|TResult1>}
+ */
+export const updateDocs = (data: any) => {
+    return basePost('updateDocs', data);
+};
+
+/**
+ * 保存指定id文章评论数据
+ * @param data
+ * @returns {Promise<Object|TResult2|TResult1>}
+ */
+export const saveCommentDocs = (data: any) => {
+    return basePost('saveCommentDocs', data);
+};
+
+/**
+ * 获取指定id文章评论数据
+ * @param data
+ * @returns {Promise<Object|TResult2|TResult1>}
+ */
+export const getCommentDocs = (data: any) => {
+    return basePost('getCommentDocs', data);
 };

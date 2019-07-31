@@ -1,26 +1,26 @@
-.css-home-sub {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: auto;
-    justify-content: stretch;
-    align-items: flex-start;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -webkit-flex-grow: 1;
-    -webkit-flex-shrink: 0;
-    -webkit-flex-basis: auto;
-    -webkit-box-pack: stretch;
-    -webkit-justify-content: stretch;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
+.css-home {
+    margin-top: 60px;
 }
+
+@media (min-width: 780px) and (max-width: 1279px) {
+    .css-home {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 779px) {
+    .css-home {
+        margin-top: 40px;
+    }
+}
+
+/*.css-home-sub {*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*flex: 1 0 auto;*/
+    /*justify-content: stretch;*/
+    /*align-items: flex-start;*/
+/*}*/
 
 .css-home-wrap {
     width: 100%;
@@ -47,7 +47,7 @@
     text-align: center;
     font-size: 45px;
     letter-spacing: 0.01em;
-    margin: 0px;
+    margin: 0;
 }
 
 .css-header-p {
@@ -59,13 +59,6 @@
 }
 
 .css-section-subwrap {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
     flex-direction: row;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
 }
