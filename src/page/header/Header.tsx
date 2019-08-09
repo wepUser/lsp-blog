@@ -22,7 +22,6 @@ const Header: React.FC<headerProps> = function ({changeSearchInfo, changeClassTy
     //enter 事件监听
     function handleKeyDown(e: any) {
         if (e.keyCode == 13) {
-            console.log('enter');
             changeSearchInfo(searchInfo);
             changeClassType('search');
         }

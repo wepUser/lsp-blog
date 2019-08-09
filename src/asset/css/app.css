@@ -1,4 +1,25 @@
-.app{
+.app {
     display: flex;
     flex-direction: column;
+}
+/*message 提示组件样式开始*/
+.ant-message {
+    position: fixed;
+    top: 16px;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+    width: 100%;
+}
+.ant-message-notice-content{
+    display: flex;
+    justify-content: center;
+}
+
+.ant-message-custom-content {
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 0 2px 1px #ddd;
+    font-size: 14px;
+    background: #ffffff;
 }
