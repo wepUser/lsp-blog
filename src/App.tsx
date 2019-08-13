@@ -11,6 +11,7 @@ import {Home} from './page/home/Home';
 import Docs from './page/docs/Docs';
 import {CreateDocs} from './page/create/CreateDocs';
 import {DocsDetail} from './page/docsDetail/DocsDetail';
+import {Chart} from './page/chart/Chart';
 
 import  './asset/css/app.css';
 
@@ -30,6 +31,7 @@ export const App = function () {
                     <Route exact path="/docs" component={Docs}/>
                     <Route exact path="/createDocs" component={CreateDocs}/>
                     <Route exact path="/docsdetail" component={DocsDetail}/>
+                    <Route exact path="/chart" component={Chart}/>
                     {/*<Footer/>*/}
                 </div>
             </Router>

@@ -42,6 +42,9 @@ const Header: React.FC<headerProps> = function ({changeSearchInfo, changeClassTy
                         <Link className="css-title" to="/createDocs">
                             CreateDocs
                         </Link>
+                        <Link className="css-title" to="/chart">
+                            Chart
+                        </Link>
                     </nav>
                     <div className="css-form">
                         <span className="css-form-span">
